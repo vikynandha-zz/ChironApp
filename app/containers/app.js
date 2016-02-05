@@ -10,8 +10,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import Chiron from './chironApp';
-import * as reducers from '../reducers';
-
+import reducers from '../reducers';
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 const reducer = combineReducers(reducers);
 const store = createStoreWithMiddleware(reducer);
