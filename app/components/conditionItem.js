@@ -19,16 +19,17 @@ export default class ConditionItem extends Component {
                 text: this.props.title,
                 onPress: this.logIn,
                 backgroundColor: '#1155DD',
+                spinner: true,
                 onPress: this.onPress.bind(this)
             },
             busy: {
-                text: this.props.title,
+                text: 'Please wait...',
                 backgroundColor: '#002299',
                 spinner: true,
             },
-            success: {
+            disabled: {
                 text: this.props.title,
-                backgroundColor: '#339944'
+                backgroundColor: '#ccc'
             }
         };
         return (
@@ -36,7 +37,7 @@ export default class ConditionItem extends Component {
                 <Button
                     states={buttonState}
                     transitionDuration={200}
-                    buttonState={'idle'}
+                    buttonState={this.props.itemState}
                     backgroundStyle={styles.itemBackground}/>
             </View>
         );

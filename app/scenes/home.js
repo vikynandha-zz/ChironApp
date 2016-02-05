@@ -1,20 +1,16 @@
 import React, { Component, Navigator } from 'react-native';
 
-import Home from '../components/home';
+import HomeContainer from '../containers/home';
+import routes, { initialRoute } from '../routes';
 
 export default class HomeScene extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{name: 'Home Scene', index: 0, component: Home}}
+                initialRoute={initialRoute}
                 renderScene={(route, navigator) => {
-                    return React.createElement(route.component, {store: this.props.store, navigator: navigator});
+                    return React.createElement(route.component, {navigator, routes});
                 }}/>
         );
     }
 }
-
-
-HomeScene.propTypes = {
-    store: React.PropTypes.object.isRequired
-};

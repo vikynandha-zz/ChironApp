@@ -1,15 +1,18 @@
 import React, {
     Component,
     View,
-    Text,
+    Text
 } from 'react-native';
 
 import styles from './styles';
+
 import ConditionItem from './conditionItem';
 
 export default class Home extends Component {
     onConditionSelect(conditionId) {
         console.log(conditionId);
+        this.props.goToConditionSetup(conditionId);
+        this.props.navigator.push(this.props.routes.setupCondition);
     }
 
     render() {
@@ -18,18 +21,19 @@ export default class Home extends Component {
             return <ConditionItem
                        key={`condition-list-${c}`}
                        conditionId={condition.id}
+                       itemState={this.props.store.itemStates[condition.id]}
                        onPress={this.onConditionSelect.bind(this)}
                        title={condition.title}/>
         })
         return (
-                <View>
-            <View style={styles.centerView}>
-                <Text style={styles.biggerText}>
-                    please select your medical condition
-                </Text>
-            </View>
-            {conditions}
+            <View>
+                <View style={styles.centerView}>
+                    <Text style={styles.biggerText}>
+                        please select your medical condition
+                    </Text>
                 </View>
+                {conditions}
+            </View>
         );
     }
 }

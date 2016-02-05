@@ -12,7 +12,7 @@ import HomeScene from '../scenes/home';
 class Chiron extends Component {
     render() {
         return (
-            <HomeScene store={this.props.store}/>
+            <HomeScene/>
         );
     }
 }
