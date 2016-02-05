@@ -12,11 +12,6 @@ import AppBody from './common/AppBody';
 import Heading1 from './common/Heading1';
 import PrimaryButton from './common/PrimaryButton';
 import NumericInput from './common/NumericInput';
-const MK = require('react-native-material-kit');
-const {
-  MKButton,
-  MKColor,
-} = MK;
 
 export default class SetupCondition extends Component {
     goToScheduleVisit() {
