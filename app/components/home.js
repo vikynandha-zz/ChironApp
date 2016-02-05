@@ -23,20 +23,20 @@ export default class Home extends Component {
                        conditionId={condition.id}
                        itemState={this.props.store.itemStates[condition.id]}
                        onPress={this.onConditionSelect.bind(this)}
-                       title={condition.title}/>
-        })
+                       title={condition.title}/>;
+        });
         return (
             <View>
                 <View style={styles.centerView}>
                     <Text style={styles.biggerText}>
-                        please select your medical condition
+                        Please select your medical condition
                     </Text>
                 </View>
                 {conditions}
             </View>
         );
     }
-}
+};
 
 Home.propTypes = {
     store: React.PropTypes.object.isRequired,

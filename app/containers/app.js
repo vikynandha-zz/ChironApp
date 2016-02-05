@@ -8,13 +8,13 @@ import React, { Component } from 'react-native';
 import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-import {devTools, persistState} from 'redux-devtools'
-import createLogger from 'redux-logger'
+import {devTools, persistState} from 'redux-devtools';
+import createLogger from 'redux-logger';
 
 import Chiron from './chironApp';
 import reducers from '../reducers';
 
-const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger();
 
 const createStoreWithMiddleware = compose(
     applyMiddleware(thunk, loggerMiddleware)
@@ -31,4 +31,4 @@ export default class App extends Component {
             </Provider>
         );
     }
-}
+};

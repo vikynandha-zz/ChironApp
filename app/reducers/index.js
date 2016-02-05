@@ -3,11 +3,11 @@ import ActionTypes from '../actions/actionTypes';
 const conditions = {
     1: {
         id: 1,
-        title: 'DVT'
+        title: 'DVT (Deep Vein Thrombosis)'
     },
     2: {
         id: 2,
-        title: 'Diabetese'
+        title: 'Diabetes'
     }
 };
 
@@ -28,22 +28,22 @@ function root(state = initialState, action = {}) {
         case ActionTypes.SELECT_CONDITION_FROM_HOME_MENU:
             return Object.assign({}, state, {
                 selected_condition: action.payload
-            })
+            });
 
         case ActionTypes.LOADING_CONDITION_SETUP:
-            conditionId = action.payload.conditionId;
+            var conditionId = action.payload.conditionId;
             itemStates = Object.assign({}, state.itemStates);
             itemStates[conditionId] = 'busy';
             state.conditions.objects.map(id => {
                 if (id !== conditionId) {
-                    itemStates[id] = 'disabled'
+                    itemStates[id] = 'disabled';
                 }
-            })
+            });
             return Object.assign({}, state, {
                 itemStates: itemStates
             });
         default:
-            return state
+            return state;
     }
 }
 
