@@ -122,4 +122,5 @@ dependencies {
     compile "com.facebook.react:react-native:0.19.+"
     compile project(':react-native-system-notification')
     compile project(':RNMaterialKit')
+    compile project(':reactdate')
 }

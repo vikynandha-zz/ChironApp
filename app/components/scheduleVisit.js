@@ -12,6 +12,8 @@ import AppBody from './common/AppBody';
 import Heading1 from './common/Heading1';
 import PrimaryButton from './common/PrimaryButton';
 import NumericInput from './common/NumericInput';
+import DateInput from './common/DateInput';
+import TimeInput from './common/TimeInput';
 
 const subSectionStyle = {
     paddingBottom: 20,
@@ -32,20 +34,22 @@ export default class SetupCondition extends Component {
                         When is your next visit?
                     </Heading1>
                     <View style={{paddingBottom: 20}}>
-                        <Text>TODO: Add Date-Time Picker</Text>
+                        <DateInput />
+                        <TimeInput value="16:00"/>
                     </View>
                     <View style={subSectionStyle}>
-                        <Text>Blood Sample Collection</Text>
-                        <Text>TODO: Add Date-Time Picker</Text>
+                        <Heading1>Blood Sample Collection</Heading1>
+                        <DateInput />
+                        <TimeInput value="15:30" />
                     </View>
                     <View style={subSectionStyle}>
-                        <Text>Book Appointment</Text>
-                        <Text>TODO: Add Date-Time Picker</Text>
+                        <Heading1>Book Appointment</Heading1>
+                        <DateInput />
                     </View>
                     <View style={{marginTop:20}}>
                         <PrimaryButton
-                            title="Schedule Visit"
-                            onPress={this.goToScheduleVisit.bind(this)}/>
+                            title="SCHEDULE VISIT"
+                            onPress={null/*this.goToScheduleVisit.bind(this)*/}/>
                     </View>
                 </AppBody>
             </ScrollView>

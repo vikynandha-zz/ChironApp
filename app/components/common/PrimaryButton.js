@@ -12,7 +12,7 @@ export default class ConditionItem extends Component {
         const ColoredRaisedButton = MKButton.coloredButton()
             .withStyle({backgroundColor:'#689F38'})
             .withText(this.props.title)
-            .withOnPress(this.props.onPress.bind(this))
+            .withOnPress(this.props.onPress && this.props.onPress.bind(this))
             .build();
 
         return (

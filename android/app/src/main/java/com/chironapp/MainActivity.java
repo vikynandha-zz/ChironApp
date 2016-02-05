@@ -10,6 +10,7 @@ import java.util.List;
 
 import io.neson.react.notification.NotificationPackage;
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
+import me.nucleartux.date.ReactDatePackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -40,7 +41,8 @@ public class MainActivity extends ReactActivity {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
           new NotificationPackage(this),
-          new ReactMaterialKitPackage()
+          new ReactMaterialKitPackage(),
+          new ReactDatePackage(this)
       );
     }
 
