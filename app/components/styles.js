@@ -15,6 +15,10 @@ export default StyleSheet.create({
     },
 
     itemLabel: {
-    color: 'white'
-  }
+        color: 'white'
+    },
+
+    rowContainer: {
+        flexDirection: 'row'
+    }
 });
