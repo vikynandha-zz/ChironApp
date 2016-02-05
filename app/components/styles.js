@@ -5,19 +5,14 @@ const center = {
 }
 
 export default StyleSheet.create({
+    appContainer: {
+        padding: 20
+    },
     centerView: Object.assign({}, center, {
         alignItems: 'center',
     }),
-    itemContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 20
-    },
     biggerText: {
-        fontSize: 22,
-        fontWeight: 'bold'
+        fontSize: 20
     },
 
     itemBackground: {

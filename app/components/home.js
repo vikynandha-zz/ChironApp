@@ -25,8 +25,9 @@ export default class Home extends Component {
                        onPress={this.onConditionSelect.bind(this)}
                        title={condition.title}/>;
         });
+
         return (
-            <View>
+            <View style={styles.appContainer}>
                 <View style={styles.centerView}>
                     <Text style={styles.biggerText}>
                         Please select your medical condition

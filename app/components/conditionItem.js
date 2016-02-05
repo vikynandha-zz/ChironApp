@@ -3,9 +3,8 @@ import React, {
     View,
     Text
 } from 'react-native';
+import {MKButton} from 'react-native-material-kit';
 
-import styles from './styles';
-import Button from 'react-native-awesome-button';
 
 export default class ConditionItem extends Component {
 
@@ -14,31 +13,14 @@ export default class ConditionItem extends Component {
     }
 
     render() {
-        const buttonState = {
-            idle: {
-                text: this.props.title,
-                onPress: this.logIn,
-                backgroundColor: '#1155DD',
-                spinner: true,
-                onPress: this.onPress.bind(this)
-            },
-            busy: {
-                text: 'Please wait...',
-                backgroundColor: '#002299',
-                spinner: true,
-            },
-            disabled: {
-                text: this.props.title,
-                backgroundColor: '#ccc'
-            }
-        };
+        const ColoredRaisedButton = MKButton.coloredButton()
+            .withText(this.props.title)
+            .withOnPress(this.onPress.bind(this))
+            .build();
+
         return (
-            <View style={styles.itemContainer}>
-                <Button
-                    states={buttonState}
-                    transitionDuration={200}
-                    buttonState={this.props.itemState}
-                    backgroundStyle={styles.itemBackground}/>
+            <View style={{marginTop: 10}}>
+                <ColoredRaisedButton />
             </View>
         );
     }
