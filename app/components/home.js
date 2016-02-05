@@ -5,8 +5,10 @@ import React, {
 } from 'react-native';
 
 import styles from './styles';
-
 import ConditionItem from './conditionItem';
+import ToolBar from './ToolBar';
+import AppBody from './AppBody';
+import Heading1 from './Heading1';
 
 export default class Home extends Component {
     onConditionSelect(conditionId) {
@@ -27,13 +29,14 @@ export default class Home extends Component {
         });
 
         return (
-            <View style={styles.appContainer}>
-                <View style={styles.centerView}>
-                    <Text style={styles.biggerText}>
+            <View>
+                <ToolBar />
+                <AppBody>
+                    <Heading1>
                         Please select your medical condition
-                    </Text>
-                </View>
-                {conditions}
+                    </Heading1>
+                    {conditions}
+                </AppBody>
             </View>
         );
     }

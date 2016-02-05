@@ -5,16 +5,9 @@ const center = {
 }
 
 export default StyleSheet.create({
-    appContainer: {
-        padding: 20
-    },
     centerView: Object.assign({}, center, {
         alignItems: 'center',
     }),
-    biggerText: {
-        fontSize: 20
-    },
-
     itemBackground: {
         flex: 1,
         height: 40,
