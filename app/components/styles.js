@@ -16,9 +16,5 @@ export default StyleSheet.create({
 
     itemLabel: {
         color: 'white'
-    },
-
-    rowContainer: {
-        flexDirection: 'row'
     }
 });

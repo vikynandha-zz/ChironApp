@@ -3,7 +3,7 @@ import React, {
     View,
     Text
 } from 'react-native';
-import {MKButton} from 'react-native-material-kit';
+import PrimaryButton from './common/PrimaryButton';
 
 
 export default class ConditionItem extends Component {
@@ -13,15 +13,11 @@ export default class ConditionItem extends Component {
     }
 
     render() {
-        const ColoredRaisedButton = MKButton.coloredButton()
-            .withStyle({backgroundColor:'#689F38'})
-            .withText(this.props.title)
-            .withOnPress(this.onPress.bind(this))
-            .build();
-
         return (
             <View style={{marginTop: 10}}>
-                <ColoredRaisedButton />
+                <PrimaryButton
+                    title={this.props.title}
+                    onPress={this.onPress.bind(this)}/>
             </View>
         );
     }
