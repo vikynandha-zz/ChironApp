@@ -13,6 +13,8 @@
     "react": "^0.14.7",
     "react-native": "0.19.0",
     "react-native-awesome-button": "^1.3.4",
+    "react-native-material-kit": "^0.2.5",
+    "react-native-system-notification": "git+https://github.com/vedarthk/react-native-system-notification.git",
     "react-redux": "4.1.2",
     "redux": "3.1.7",
     "redux-actions": "^0.9.1",

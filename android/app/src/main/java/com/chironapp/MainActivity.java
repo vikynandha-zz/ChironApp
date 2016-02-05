@@ -3,9 +3,13 @@ package com.chironapp;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import android.content.Intent;
 
 import java.util.Arrays;
 import java.util.List;
+
+import io.neson.react.notification.NotificationPackage;
+import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -34,7 +38,15 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage()
+          new MainReactPackage(),
+          new NotificationPackage(this),
+          new ReactMaterialKitPackage()
       );
+    }
+
+    @Override
+    public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        //mReactNativePushNotificationPackage.newIntent(data);
     }
 }
