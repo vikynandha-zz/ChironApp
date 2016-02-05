@@ -1,7 +1,8 @@
 import React, {
     Component,
     View,
-    Text
+    Text,
+    BackAndroid
 } from 'react-native';
 
 import styles from './styles';
@@ -15,6 +16,19 @@ export default class Home extends Component {
         console.log(conditionId);
         this.props.goToConditionSetup(conditionId);
         this.props.navigator.push(this.props.routes.setupCondition);
+    }
+
+    goBack() {
+        this.props.navigator.pop();
+    }
+
+    componentDidMount() {
+
+        BackAndroid.addEventListener('hardwareBackPress', function() {
+            this.goBack();
+            return true;
+        }.bind(this));
+
     }
 
     render() {
