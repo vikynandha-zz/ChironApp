@@ -7,9 +7,9 @@ import React, {
 
 import styles from './styles';
 import ConditionItem from './conditionItem';
-import ToolBar from './ToolBar';
-import AppBody from './AppBody';
-import Heading1 from './Heading1';
+import ToolBar from './common/ToolBar';
+import AppBody from './common/AppBody';
+import Heading1 from './common/Heading1';
 
 export default class Home extends Component {
     onConditionSelect(conditionId) {
