@@ -6,14 +6,14 @@ import React, {
 
 import styles from './styles';
 
-export default class SetupReminders extends Component {
+export default class ScheduleVisit extends Component {
 
     render() {
         return (
             <View>
                 <View style={styles.centerView}>
                     <Text style={styles.biggerText}>
-                        SETUP REMINDERS
+                        Schedule Visit
                     </Text>
                 </View>
             </View>
@@ -21,6 +21,6 @@ export default class SetupReminders extends Component {
     }
 }
 
-SetupReminders.propTypes = {
+ScheduleVisit.propTypes = {
     navigator: React.PropTypes.object.isRequired
 };

@@ -19,8 +19,8 @@ const {
 } = MK;
 
 export default class SetupCondition extends Component {
-    goToReminders() {
-        this.props.navigator.push(routes.setupReminders);
+    goToScheduleVisit() {
+        this.props.navigator.push(routes.scheduleVisit);
     }
 
     render() {
@@ -36,7 +36,7 @@ export default class SetupCondition extends Component {
                     <View style={{marginTop:20}}>
                         <PrimaryButton
                             title="Save"
-                            onPress={this.goToReminders.bind(this)}/>
+                            onPress={this.goToScheduleVisit.bind(this)}/>
                     </View>
                 </AppBody>
             </ScrollView>

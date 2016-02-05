@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import React from 'react-native';
 
-import SetupReminders from '../components/setupReminders';
+import ScheduleVisit from '../components/scheduleVisit';
 
 function mapStateToProps(state) {
     return {store: state.root}
@@ -14,4 +14,4 @@ function mapDispatchToProps(dispatch) {
     }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SetupReminders);
+export default connect(mapStateToProps, mapDispatchToProps)(ScheduleVisit);
