@@ -30,6 +30,18 @@ export default class ScheduleVisit extends Component {
 
     setNextVisitDate(date) {
         nextVisit.visit.date = date;
+        
+        var bloodSampleDay = new Date(date);
+        bloodSampleDay.setDate(date.getDate() - 1);
+        this.refs.nextBloodSampleDate.setState({
+            dateValue: bloodSampleDay
+        });
+
+        var bookAppointmentDay = new Date(date);
+        bookAppointmentDay.setDate(date.getDate() - 14);
+        this.refs.bookAppointmentDate.setState({
+            dateValue: bookAppointmentDay
+        });
     }
     setNextVisitTime(time) {
         nextVisit.visit.time = time;

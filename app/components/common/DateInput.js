@@ -14,6 +14,11 @@ export default class DateInput extends Component {
         this.state = {dateValue: this.props.value};
     }
 
+    formatDate(date) {
+        if (!date) return '';
+        return date.getDate() + '/' + ( date.getMonth() + 1) + '/' + date.getFullYear();
+    }
+
     render() {
         return <View style={{marginTop: 10}}>
             <MKTextField
@@ -23,7 +28,7 @@ export default class DateInput extends Component {
                 floatingLabelEnabled={false}
                 keyboardType="default"
                 placeholder="dd/mm/yyyy"
-                value={this.state.dateValue || ''}
+                value={this.formatDate(this.state.dateValue || '')}
                 onFocus={this.showDatePicker.bind(this)}
                 floatingLabelBottomMargin={2}/>
         </View>
@@ -31,10 +36,10 @@ export default class DateInput extends Component {
 
     showDatePicker() {
         NativeModules.DateAndroid.showDatepicker(function() {}, function(year, monthIndex, day) {
-            var formattedDate = day + '/' + (monthIndex + 1) + '/' + year;
-            this.setState({ dateValue: formattedDate });
+            var date = new Date(year, monthIndex, day);
+            this.setState({ dateValue: date });
             if (this.props.onSelect) {
-                this.props.onSelect(formattedDate);
+                this.props.onSelect(date);
             }
         }.bind(this));
     }
