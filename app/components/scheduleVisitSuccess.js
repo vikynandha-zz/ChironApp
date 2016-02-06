@@ -13,6 +13,11 @@ import Heading1 from './common/Heading1';
 
 
 export default class ScheduleVisitSuccess extends Component {
+	formatDate(date) {
+        if (!date) return '';
+        return date.getDate() + '/' + ( date.getMonth() + 1) + '/' + date.getFullYear();
+    }
+
 	render() {
 		const headingStyle = {color: '#43A047', fontWeight: 'bold'};
 		const nextVisit = this.props.store.nextVisit;
@@ -27,7 +32,7 @@ export default class ScheduleVisitSuccess extends Component {
                     	<Heading1>
                     		Your next visit is scheduled for
                 		</Heading1>
-						<Text>{nextVisit.visit.date} - {nextVisit.visit.time}</Text>
+						<Text>{this.formatDate(nextVisit.visit.date)} - {nextVisit.visit.time}</Text>
 					</View>
                 </AppBody>
             </ScrollView>
