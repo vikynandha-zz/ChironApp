@@ -33,6 +33,9 @@ export default class DateInput extends Component {
         NativeModules.DateAndroid.showDatepicker(function() {}, function(year, monthIndex, day) {
             var formattedDate = day + '/' + (monthIndex + 1) + '/' + year;
             this.setState({ dateValue: formattedDate });
+            if (this.props.onSelect) {
+                this.props.onSelect(formattedDate);
+            }
         }.bind(this));
     }
 

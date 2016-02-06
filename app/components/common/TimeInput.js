@@ -12,6 +12,9 @@ export default class TimeInput extends Component {
     constructor(props) {
         super(props);
         this.state = {timeValue: this.props.value};
+        if (this.props.onSelect && this.props.value) {
+            this.props.onSelect(this.props.value);
+        }
     }
 
     render() {
@@ -31,6 +34,9 @@ export default class TimeInput extends Component {
         NativeModules.DateAndroid.showTimepicker(function() {}, function(hours, minutes) {
             var formattedTime = hours + ':' + minutes;
             this.setState({ timeValue: formattedTime });
+            if (this.props.onSelect) {
+                this.props.onSelect(formattedDate);
+            }
         }.bind(this));
     }
 

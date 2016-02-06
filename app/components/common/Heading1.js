@@ -7,9 +7,13 @@ import React, {
 
 export default class Heading1 extends Component {
 	render() {
+		const style = Object.assign({}, {
+			fontSize: 20,
+			color: '#666'
+		}, this.props.style);
 		return (
 			<View>
-				<Text style={{fontSize: 20, color: '#666'}}>
+				<Text style={style}>
 		    		{this.props.children}
 	    		</Text>
 			</View>

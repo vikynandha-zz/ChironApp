@@ -46,8 +46,10 @@ function root(state = initialState, action = {}) {
 
         case ActionTypes.SCHEDULE_VISIT:
             var myVisits = state.myVisits;
-            myVisits.push(action.payload.nextVisit);
+            var nextVisit = action.payload.nextVisit;
+            myVisits.push(nextVisit);
             return Object.assign({}, state, {
+                nextVisit: nextVisit,
                 myVisits: myVisits
             });
         default:

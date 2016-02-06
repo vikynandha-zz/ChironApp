@@ -26,30 +26,30 @@ var nextVisit = {
     bookAppointment: {date:null, time:null}
 };
 
-export default class SetupCondition extends Component {
+export default class ScheduleVisit extends Component {
 
     setNextVisitDate(date) {
         nextVisit.visit.date = date;
     }
-    setNextVisitTime(date) {
+    setNextVisitTime(time) {
         nextVisit.visit.time = time;
     }
-    setNextBloodSampleDate() {
+    setNextBloodSampleDate(date) {
         nextVisit.bloodSample.date = date;
     }
-    setNextBloodSampleTime() {
+    setNextBloodSampleTime(time) {
         nextVisit.bloodSample.time = time;
     }
-    setNextBookAppointmentDate() {
+    setNextBookAppointmentDate(date) {
         nextVisit.bookAppointment.date = date;
     }
-    setNextBookAppointmentTime() {
+    setNextBookAppointmentTime(time) {
         nextVisit.bookAppointment.time = time;
     }
 
     goToScheduleVisit() {
         this.props.goToScheduleVisitSuccess(nextVisit);
-        this.props.navigator.push(routes.scheduleVisit);
+        this.props.navigator.push(routes.scheduleVisitSuccess);
     }
 
     render() {
@@ -100,6 +100,6 @@ export default class SetupCondition extends Component {
     }
 }
 
-SetupCondition.propTypes = {
+ScheduleVisit.propTypes = {
     navigator: React.PropTypes.object.isRequired
 };
