@@ -19,7 +19,8 @@ const initialState = {
     conditions: {
         objects: [1, 2],
         entities: conditions
-    }
+    },
+    myVisits: []
 };
 
 function root(state = initialState, action = {}) {
@@ -41,6 +42,13 @@ function root(state = initialState, action = {}) {
             });
             return Object.assign({}, state, {
                 itemStates: itemStates
+            });
+
+        case ActionTypes.SCHEDULE_VISIT:
+            var myVisits = state.myVisits;
+            myVisits.push(action.payload.nextVisit);
+            return Object.assign({}, state, {
+                myVisits: myVisits
             });
         default:
             return state;

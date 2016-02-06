@@ -3,6 +3,7 @@ import {bindActionCreators} from 'redux';
 import { connect } from 'react-redux';
 import React from 'react-native';
 
+import {goToScheduleVisitSuccess} from '../actions/scheduleVisit';
 import ScheduleVisit from '../components/scheduleVisit';
 
 function mapStateToProps(state) {
@@ -11,6 +12,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
+    	goToScheduleVisitSuccess
     }, dispatch);
 }
 
