@@ -10,6 +10,7 @@ Lack of timely interventions or delay in receiving care will typically result in
 Chiron helps people to monitor and manage their conditions better.
 
 Typical use cases are:
+
 1. Scheduled monitoring of health parameters
 2. Scheduled medical intervention with recent records
 3. Information records made available on an emergency
