@@ -26,8 +26,8 @@ export default class SetupCondition extends Component {
                     <Heading1>
                         Your current reading & dosage
                     </Heading1>
-                    <NumericInput label='PT-INR Value'/>
-                    <NumericInput label='Acitrom Dosage'/>
+                    <NumericInput ref="inrValue" label='PT-INR Value'/>
+                    <NumericInput ref="acitromDosage" label='Acitrom Dosage'/>
                     <View style={{marginTop:20}}>
                         <PrimaryButton
                             title="Save"

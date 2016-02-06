@@ -34,17 +34,18 @@ export default class SetupCondition extends Component {
                         When is your next visit?
                     </Heading1>
                     <View style={{paddingBottom: 20}}>
-                        <DateInput />
-                        <TimeInput value="16:00"/>
+                        <DateInput ref="nextVisitDate"/>
+                        <TimeInput ref="nextVisitTime" value="16:00"/>
                     </View>
                     <View style={subSectionStyle}>
                         <Heading1>Blood Sample Collection</Heading1>
-                        <DateInput />
-                        <TimeInput value="15:30" />
+                        <DateInput ref="nextBloodSampleDate" />
+                        <TimeInput ref="nextBloodSampleTime" value="15:30" />
                     </View>
                     <View style={subSectionStyle}>
                         <Heading1>Book Appointment</Heading1>
-                        <DateInput />
+                        <DateInput ref="bookAppointmentDate" />
+                        <TimeInput ref="bookAppointmentTime" value="10:30" />
                     </View>
                     <View style={{marginTop:20}}>
                         <PrimaryButton
