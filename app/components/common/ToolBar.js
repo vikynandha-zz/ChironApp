@@ -5,7 +5,7 @@ import React, {
 
 const style = {
 	height: 56,
-	backgroundColor: '#00897B'
+	backgroundColor: '#00838F'
 };
 
 export default class ToolBar extends Component {
