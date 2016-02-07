@@ -12,7 +12,7 @@ export default class ToolBar extends Component {
     render() {
         return (
             <ToolbarAndroid
-            	title='Chiron'
+            	title={this.props.title || 'Chiron'}
             	titleColor='rgba(255,255,255,0.87)'
             	style={style}
             />

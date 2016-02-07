@@ -65,9 +65,12 @@ export default class ScheduleVisit extends Component {
     }
 
     render() {
+        const conditionId = this.props.store.selected_condition;
+        const selectedCondition = this.props.store.conditions.entities[conditionId];
+
         return (
             <ScrollView>
-                <ToolBar />
+                <ToolBar title={selectedCondition.title} />
                 <AppBody>
                     <Heading1>
                         When is your next visit?

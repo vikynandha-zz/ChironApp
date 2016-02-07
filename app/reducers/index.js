@@ -3,7 +3,7 @@ import ActionTypes from '../actions/actionTypes';
 const conditions = {
     1: {
         id: 1,
-        title: 'DVT (Deep Vein Thrombosis)'
+        title: 'Deep Vein Thrombosis'
     },
     2: {
         id: 2,

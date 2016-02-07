@@ -19,11 +19,15 @@ export default class ScheduleVisitSuccess extends Component {
     }
 
 	render() {
-		const headingStyle = {color: '#43A047', fontWeight: 'bold'};
+		const conditionId = this.props.store.selected_condition;
+        const selectedCondition = this.props.store.conditions.entities[conditionId];
+
+        const headingStyle = {color: '#43A047', fontWeight: 'bold'};
 		const nextVisit = this.props.store.nextVisit;
-		return (
+
+        return (
 			<ScrollView>
-                <ToolBar />
+                <ToolBar title={selectedCondition.title} />
                 <AppBody>
                     <Heading1 style={headingStyle}>
                         Success!
