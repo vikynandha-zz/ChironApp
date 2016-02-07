@@ -4,6 +4,7 @@ import React, {
     TextInput,
     NativeModules
 } from 'react-native';
+import moment from 'moment';
 
 
 export default class DateInput extends Component {
@@ -15,7 +16,8 @@ export default class DateInput extends Component {
 
     formatDate(date) {
         if (!date) return '';
-        return date.getDate() + '/' + ( date.getMonth() + 1) + '/' + date.getFullYear();
+        return moment(date).format('MMM D, YYYY') + 
+            ' (' + moment(date).fromNow() + ')';
     }
 
     render() {
