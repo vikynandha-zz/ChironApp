@@ -1,10 +1,9 @@
 import React, {
     Component,
     View,
+    TextInput,
     NativeModules
 } from 'react-native';
-
-import {MKTextField} from 'react-native-material-kit';
 
 
 export default class DateInput extends Component {
@@ -21,16 +20,13 @@ export default class DateInput extends Component {
 
     render() {
         return <View style={{marginTop: 10}}>
-            <MKTextField
+            <TextInput
                 autoFocus={this.props.autoFocus}
                 ref={component => this._textInput = component}
-                underlineEnabled={true}
-                floatingLabelEnabled={false}
                 keyboardType="default"
                 placeholder="dd/mm/yyyy"
                 value={this.formatDate(this.state.dateValue || '')}
-                onFocus={this.showDatePicker.bind(this)}
-                floatingLabelBottomMargin={2}/>
+                onFocus={this.showDatePicker.bind(this)} />
         </View>
     }
 

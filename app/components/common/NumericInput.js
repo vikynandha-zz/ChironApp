@@ -1,21 +1,18 @@
 import React, {
     Component,
-    View
+    View,
+    TextInput
 } from 'react-native';
-
-import {MKTextField} from 'react-native-material-kit';
 
 
 export default class NumericInput extends Component {
 
     render() {
         return <View style={{marginTop: 10}}>
-            <MKTextField
-                underlineEnabled={true}
-                floatingLabelEnabled={true}
+            <TextInput
+                underlineColorAndroid='#00897B'
                 keyboardType="numeric"
-                placeholder={this.props.label}
-                floatingLabelBottomMargin={2}/>
+                placeholder={this.props.label} />
         </View>
     }
 

@@ -1,10 +1,9 @@
 import React, {
     Component,
     View,
+    TextInput,
     NativeModules
 } from 'react-native';
-
-import {MKTextField} from 'react-native-material-kit';
 
 
 export default class TimeInput extends Component {
@@ -19,14 +18,11 @@ export default class TimeInput extends Component {
 
     render() {
         return <View style={{marginTop: 10}}>
-            <MKTextField
+            <TextInput
                 ref={component => this._textInput = component}
-                underlineEnabled={true}
-                floatingLabelEnabled={false}
                 keyboardType="default"
                 value={this.state.timeValue || ''}
-                onFocus={this.showTimePicker.bind(this)}
-                floatingLabelBottomMargin={2}/>
+                onFocus={this.showTimePicker.bind(this)} />
         </View>
     }
 
