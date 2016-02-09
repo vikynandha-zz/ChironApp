@@ -12,8 +12,7 @@ import AppBody from './common/AppBody';
 import Heading1 from './common/Heading1';
 import PrimaryButton from './common/PrimaryButton';
 import NumericInput from './common/NumericInput';
-import DateInput from './common/DateInput';
-import TimeInput from './common/TimeInput';
+import DateTimeInput from './common/DateTimeInput';
 
 const subSectionStyle = {
     paddingBottom: 20,
@@ -30,17 +29,17 @@ export default class ScheduleVisit extends Component {
 
     setNextVisitDate(date) {
         nextVisit.visit.date = date;
-        
+
         var bloodSampleDay = new Date(date);
         bloodSampleDay.setDate(date.getDate() - 1);
         this.refs.nextBloodSampleDate.setState({
-            dateValue: bloodSampleDay
+            value: bloodSampleDay
         });
 
         var bookAppointmentDay = new Date(date);
         bookAppointmentDay.setDate(date.getDate() - 14);
         this.refs.bookAppointmentDate.setState({
-            dateValue: bookAppointmentDay
+            value: bookAppointmentDay
         });
     }
     setNextVisitTime(time) {
@@ -70,39 +69,30 @@ export default class ScheduleVisit extends Component {
 
         return (
             <ScrollView>
-                <ToolBar title={selectedCondition.title} />
+                <ToolBar title={selectedCondition ? selectedCondition.title : null} />
                 <AppBody>
                     <Heading1>
                         When is your next visit?
                     </Heading1>
                     <View style={{paddingBottom: 20}}>
-                        <DateInput 
-                            ref="nextVisitDate" 
+                        <DateTimeInput
+                            ref="nextVisitDate"
+                            time="16"
                             onSelect={this.setNextVisitDate.bind(this)} />
-                        <TimeInput 
-                            ref="nextVisitTime" 
-                            value="16:00"
-                            onSelect={this.setNextVisitTime.bind(this)} />
                     </View>
                     <View style={subSectionStyle}>
                         <Heading1>Blood Sample Collection</Heading1>
-                        <DateInput
+                        <DateTimeInput
                             ref="nextBloodSampleDate"
+                            time="15:30"
                             onSelect={this.setNextBloodSampleDate.bind(this)} />
-                        <TimeInput
-                            ref="nextBloodSampleTime"
-                            value="15:30"
-                            onSelect={this.setNextBloodSampleTime.bind(this)} />
                     </View>
                     <View style={subSectionStyle}>
                         <Heading1>Book Appointment</Heading1>
-                        <DateInput
+                        <DateTimeInput
                             ref="bookAppointmentDate"
+                            time="11"
                             onSelect={this.setNextBookAppointmentDate.bind(this)} />
-                        <TimeInput
-                            ref="bookAppointmentTime"
-                            value="10:30"
-                            onSelect={this.setNextBookAppointmentTime.bind(this)} />
                     </View>
                     <View style={{marginTop:20}}>
                         <PrimaryButton
